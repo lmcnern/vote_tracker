@@ -1,4 +1,27 @@
+body {
+  background-color: #FFFFA6;
+  font-family: ubuntu;
+}
+
+h1 {
+  text-align: center;
+  color: #2F2933;
+  font-family: 'Open Sans', sans-serif;
+}
+
+p {
+  color: #01A2A6;
+}
+
 .hot {
-    border-radius: 20px;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: 'red';
+}
+
+.hot:hover {
+  border-radius: 20px;
+  border-style: solid;
+  border-color: 'red';
 }
 
