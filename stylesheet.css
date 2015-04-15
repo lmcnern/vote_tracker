@@ -9,6 +9,14 @@ h1 {
   font-family: 'Open Sans', sans-serif;
 }
 
+#firstKitten {
+  position: fixed; top: 90px; right: 30px; }
+}
+
+#secondKitten {
+  position: fixed; top: 90px; left: 30px; }
+}
+
 p {
   color: #01A2A6;
 }
