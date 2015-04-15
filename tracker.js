@@ -7,20 +7,24 @@ $(document).ready(function() {
   var voteData = [];
   var randomKitten = ['K1.jpg', 'K2.jpg', 'K3.jpg', 'K4.jpg', 'K5.jpg', 'K6.jpg', 'K7.jpg', 'K8.jpg', 'K9.jpg', 'K10.jpg', 'K11.jpg', 'K12.jpg', 'K13.jpg'];
 
-  var kittenModel = function(name) {
-    this.name = name;
-    this.totalVotes = 0;
+  var kittenModel = function(label) {
+    this.label = label;
+    this.value = 0;
+    this.color = 'red';
+    this.highlight = 'blue';
 
     this.addVote = function() {
-      this.totalVotes++;
-      console.log(this.name + ',' + this.totalVotes);
+      this.value++;
+      console.log(this.label + ',' + this.value);
     };
   };
 
   var len = randomKitten.length;
     for (var i = 0; i < len; i++) {
       voteData.push(new kittenModel(randomKitten[i]));
-    };
+  };
+
+    console.log(voteData.length);
 
   function getKittenImage(kittenArr) {
     return kittenArr[Math.floor(Math.random() * kittenArr.length)];
@@ -36,8 +40,6 @@ $(document).ready(function() {
   getKittens($('#firstKitten'));
   getKittens($('#secondKitten'));
 
-  // console.log(getKittenImage(randomKitten));
-
   function vote() {
     //what kitten I picked
     var thing = $(this);
@@ -52,29 +54,30 @@ $(document).ready(function() {
     var count = 0;
     var voteDataLength = voteData.length;
       for (count; count < voteDataLength; count++) {
-        if (voteTitle === voteData[count].name) {
-
-          //run vote function to add one to totalVotes of the object in voteData whose index is = to value of count
+        //count is counting my position in the for loop (initializing)
+        //second segment is the condition for exiting the for loop (as long as condition is true, loop continues)
+        //third segment is what to do when you end the loop (add one) (third segment increments or subtracts from number)
+        console.log(voteTitle);
+        console.log(voteData[count].label);
+        if (voteTitle === voteData[count].label) {
+          voteData[count].addVote();
+          break;
+          //if condition is handled as middle segment of for loop
+          //run vote function to add one to value of the object in voteData whose index is = to value of count
           //addvote pls
           //break
           //
         }
       }
-
-      // console.log('test');
-      // console.log(count);
-      // console.log(voteData);
-      // console.log('voteTitle' + voteTitle);
-
-    // var catModel = new kittenModel(thing.attr('title'));
-    // commented out because I made an object up top
-    // catModel.addVote();
-    // kittyVar = catModel.totalVotes;
+    var getChart = document.getElementById("myVotersChart").getContext('2d');
+    var newChart = new Chart(getChart).Doughnut(voteData);
 
   };
 
-  firstKitten.addEventListener('click', vote, false); //add the update function from the chart.js API to this?
-  secondKitten.addEventListener('click', vote, false); // and add the update function here too!
+  //add the update function from the chart.js API to this?
+  firstKitten.addEventListener('click', vote, false);
+  // and add the update function here too!
+  secondKitten.addEventListener('click', vote, false);
   refreshButton.addEventListener('click', refreshKittens, false);
 
   function refreshKittens() {
@@ -85,37 +88,22 @@ $(document).ready(function() {
   };
 
   var getChart = document.getElementById("myVotersChart").getContext('2d');
-  var newChart = new Chart(getChart).Doughnut(kittenData);
-  // console.dir(newChart);
-  // newChart.segments[0].value = kittyVar;
-  // newChart.segments[1].value = kittyVar;
-  console.log(kittenData);
+  var newChart = new Chart(getChart).Doughnut(voteData);
+
 });
 
 
 var kittenData = [
-  'k1':{
+  {
     value: 1,
-    color: "#F7464A",
-    highlight: "#FF5A5E",
+    // color: "#F7464A",
+    // highlight: "#FF5A5E",
     label: "K1"
   },
-  'k2':{
+  {
     value: 1,
-    color: "#46BFBD",
-    highlight: "#5AD3D1",
+    // color: "#46BFBD",
+    // highlight: "#5AD3D1",
     label: "K2"
   },
 ]
-
-
-  // var kittenModel = function(name, totalVotes){
-    //   this.name = name;
-    //   this.totalVotes = totalVotes;
-    //   //array.push(new kittenModel(randomKitten[i]));
-
-    //   this.addVote = function() {
-    //     this.totalVotes ++;
-    //     console.log(this.name+ this.totalVotes);
-    //   };
-    // };
