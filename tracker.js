@@ -1,9 +1,9 @@
 'use strict';
 $(document).ready(function() {
   var kittyVar;
-  var firstKitten = document.getElementById('firstKitten');
-  var secondKitten = document.getElementById('secondKitten');
-  var refreshButton = document.getElementById('refresh');
+  // var firstKitten = document.getElementById('firstKitten');
+  // var secondKitten = document.getElementById('secondKitten');
+  // var refreshButton = document.getElementById('refresh');
   var voteData = [];
   var randomKitten = ['K1.jpg', 'K2.jpg', 'K3.jpg', 'K4.jpg', 'K5.jpg', 'K6.jpg', 'K7.jpg', 'K8.jpg', 'K9.jpg', 'K10.jpg', 'K11.jpg', 'K12.jpg', 'K13.jpg'];
 
@@ -23,8 +23,6 @@ $(document).ready(function() {
     for (var i = 0; i < len; i++) {
       voteData.push(new kittenModel(randomKitten[i]));
   };
-
-    console.log(voteData.length);
 
   function getKittenImage(kittenArr) {
     return kittenArr[Math.floor(Math.random() * kittenArr.length)];
@@ -74,11 +72,9 @@ $(document).ready(function() {
 
   };
 
-  //add the update function from the chart.js API to this?
-  firstKitten.addEventListener('click', vote, false);
-  // and add the update function here too!
-  secondKitten.addEventListener('click', vote, false);
-  refreshButton.addEventListener('click', refreshKittens, false);
+  $('#firstKitten').click('click', vote, false);
+  $('#secondKitten').click('click', vote, false);
+  $('#refresh').click('click', refreshKittens, false);
 
   function refreshKittens() {
     $('#firstKitten').children().remove();

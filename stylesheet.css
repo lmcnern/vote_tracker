@@ -6,19 +6,32 @@ body {
 h1 {
   text-align: center;
   color: #2F2933;
-  font-family: 'Open Sans', sans-serif;
+  font-family: ubuntu;
 }
 
 #firstKitten {
-  position: fixed; top: 90px; right: 30px; }
+  position: fixed; top: 90px; right: 30px;
 }
 
 #secondKitten {
-  position: fixed; top: 90px; left: 30px; }
+  position: fixed; top: 90px; left: 30px;
+}
+
+#myVotersChart {
+  position: relative;
+  left: 400px;
+  top: 20px;
+}
+
+#refresh {
+  position: relative;
+  top: 40px;
+  left: 400px;
 }
 
 p {
   color: #01A2A6;
+  font-family: ubuntu;
 }
 
 .hot {
