@@ -17,13 +17,13 @@ h1 {
   position: fixed; top: 90px; left: 30px;
 }
 
-#myVotersChart {
+#myChart {
   position: relative;
   left: 400px;
   top: 20px;
 }
 
-#refresh {
+#reset {
   position: relative;
   top: 40px;
   left: 400px;
