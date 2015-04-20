@@ -1,0 +1,22 @@
+{
+  "name": "vote_tracker",
+  "version": "1.0.0",
+  "description": "kitten battle votes",
+  "main": "vote_tracker.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmcnern/vote_tracker"
+  },
+  "author": "Lauren McNerney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lmcnern/vote_tracker/issues"
+  },
+  "homepage": "https://github.com/lmcnern/vote_tracker",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
