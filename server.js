@@ -13,7 +13,7 @@ app.use(function(req, res, next) {
   res.status(404).sendFile(__dirname + '/public/404.html');
 })
 
-http.listen(process.env.PORT || 3000, function(){
-  console.log('listening on', http.address().port);
-});
+app.listen(app.get('port'), function() {
+  console.log('this node app is running with localhost:' +app.get('port'));
+})
 
