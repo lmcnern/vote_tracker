@@ -1,20 +1,27 @@
 {
-  "name": "battle_cats007",
+  "name": "vote_tracker",
   "version": "0.1.0",
-  "description": "Kitten Wars",
+  "description": "cute kitten vote wars!",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "~4.9.x"
+    "express": "^4.12.3"
   },
-  "engines": {
-    "node": "0.12.2"
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/lmcnern/vote_tracker"
   },
-  "license": "MIT"
+  "author": "Lauren McNerney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lmcnern/vote_tracker/issues"
+  },
+  "homepage": "https://github.com/lmcnern/vote_tracker"
 }
